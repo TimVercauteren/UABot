@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace UABot
 {
@@ -56,25 +54,25 @@ namespace UABot
             _commands.Log += Log;
 
             // Setup your DI container.
-            _services = ConfigureServices();
+            //_services = ConfigureServices();
 
         }
 
         // If any services require the client, or the CommandService, or something else you keep on hand,
         // pass them as parameters into this method as needed.
         // If this method is getting pretty long, you can seperate it out into another file using partials.
-        private static IServiceProvider ConfigureServices()
-        {
-            var map = new ServiceCollection()
-                // Repeat this for all the service classes
-                // and other dependencies that your commands might need.
-                .AddSingleton(new SomeServiceClass());
+        //private static IServiceProvider ConfigureServices()
+        //{
+        //    //var map = new ServiceCollection()
+        //    //    // Repeat this for all the service classes
+        //    //    // and other dependencies that your commands might need.
+        //    //    .AddSingleton(new SomeServiceClass());
 
-            // When all your required services are in the collection, build the container.
-            // Tip: There's an overload taking in a 'validateScopes' bool to make sure
-            // you haven't made any mistakes in your dependency graph.
-            return map.BuildServiceProvider();
-        }
+        //    // When all your required services are in the collection, build the container.
+        //    // Tip: There's an overload taking in a 'validateScopes' bool to make sure
+        //    // you haven't made any mistakes in your dependency graph.
+        //    return map.BuildServiceProvider();
+        //}
 
         // Example of a logging handler. This can be re-used by addons
         // that ask for a Func<LogMessage, Task>.
@@ -113,7 +111,7 @@ namespace UABot
         {
             await InitCommands();
 
-            await _client.LoginAsync(TokenType.Bot, Environment.GetEnvironmentVariable("DiscordToken"));
+            await _client.LoginAsync(TokenType.Bot, "NjU0Njc1NTY2NTY1NTIzNDU3.XfKFaQ.7BARS-sr-FgM2qV7TEBdflYdB2c");
             await _client.StartAsync();
 
             await Task.Delay(Timeout.Infinite);
@@ -122,7 +120,7 @@ namespace UABot
         private async Task InitCommands()
         {
             // Or add Modules manually if you prefer to be a little more explicit:
-            await _commands.AddModuleAsync<SomeModule>(_services);
+            //await _commands.AddModuleAsync<SomeModule>(_services);
             // Note that the first one is 'Modules' (plural) and the second is 'Module' (singular).
 
             // Subscribe a handler to see if a message invokes a command.
