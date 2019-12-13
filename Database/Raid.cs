@@ -12,5 +12,14 @@ namespace Database
         public List<Player> Accepted { get; set; }
         public List<Player> Declined { get; set; }
         public string RaidNaam { get; set; }
+        public string Owner { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"{RaidNaam} {Difficulty} - {Tijdstip:f}\n{Description}\nDoor {Owner}";
+        }
     }
+
+    
 }

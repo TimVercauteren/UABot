@@ -7,12 +7,5 @@ namespace Database
     {
         public DbSet<Player> Players { get; set; }
         public DbSet<Raid> Raids { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-
-            base.OnModelCreating(modelBuilder);
-        } 
-
     }
 }
