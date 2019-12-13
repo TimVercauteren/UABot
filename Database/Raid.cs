@@ -13,6 +13,8 @@ namespace Database
         public List<Player> Declined { get; set; }
         public string RaidNaam { get; set; }
         public string Owner { get; set; }
+        public ulong DiscordMessageId { get; set; }
+        public ulong DiscordChannelId { get; set; }
 
 
         public override string ToString()

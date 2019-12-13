@@ -49,7 +49,14 @@ namespace UABot.Services
             var result = await _reactionLogic.VerwerkReaction(reaction);
             if (result.Status == Status.ResultOk)
             {
-                await arg3.Channel.SendMessageAsync(result.MessageToReply);
+                if (result.DmUser != null)
+                {
+                    await result.DmUser.SendMessageAsync(result.MessageToReply);
+                }
+                else
+                {
+                    await arg3.Channel.SendMessageAsync(result.MessageToReply);
+                }
             }
         }
 

@@ -25,7 +25,7 @@ namespace UABot
                 client.Log += LogAsync;
                 services.GetRequiredService<CommandService>().Log += LogAsync;
 
-                await client.LoginAsync(TokenType.Bot, "token");
+                await client.LoginAsync(TokenType.Bot, "NjU0Njc1NTY2NTY1NTIzNDU3.XfNmZw.dIuTNIEFHZ7mIgkpKNzuPeY3pL4");
                 await client.StartAsync();
 
                 await services.GetRequiredService<CommandHandlingService>().InitializeAsync();

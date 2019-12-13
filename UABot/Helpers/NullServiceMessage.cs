@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Discord;
 
 namespace UABot.Helpers
 {
@@ -25,5 +26,7 @@ namespace UABot.Helpers
 
             }
         }
+
+        public IUser DmUser { get; set; }
     }
 }

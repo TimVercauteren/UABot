@@ -22,7 +22,7 @@ namespace UABot.ReactionLogic
                     message = $"Declined invite";
                 }
 
-                return new ServiceMessage{ Status = Status.ResultOk, MessageToReply = message};
+                return new ServiceMessage{ Status = Status.ResultOk, MessageToReply = message, DmUser = reaction.UserToReact.GetValueOrDefault()};
             }
 
             return NullServiceMessage.Instance;
