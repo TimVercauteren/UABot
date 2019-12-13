@@ -17,7 +17,7 @@ namespace UABot.Modules
 
         [Command("newraid")]
         //[RequireUserPermission(GuildPermission.ManageGuild)]
-        public async Task CreateNewraid(string raid, string difficulty, string dateTime, IUser user = null)
+        public async Task CreateNewRaid(string raid, string difficulty, string dateTime, IUser user = null)
         {
             user??= Context.User;
 
@@ -30,7 +30,6 @@ namespace UABot.Modules
                 User = user,
             };
 
-            
             CalenderService.CreateCalendarRaidEvent(dTo);
 
             await ReplyAsync("Event Created");
